@@ -26,11 +26,12 @@ class Administrador
 
     public function handle($request, Closure $next)
     {
-        if($this->auth->user()->administrador()){
-            return $next($request);
+        if(!$this->auth->user()->administrador()){
+                        return view('errors.empleado.402');
+
         }
-        else{
-            return view('errors.empleado.402');
-        }
-    }
+                       return $next($request);
+
+
+}
 }

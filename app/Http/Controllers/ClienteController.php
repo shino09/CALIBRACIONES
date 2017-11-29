@@ -70,8 +70,9 @@ class ClienteController extends Controller
         $cliente->estado = 'Activo';
         $cliente->save();
 
+                $clientes = Cliente::orderBy('nombre', 'asc')->paginate(20);
 
-            return view('administrador.clientes.index')->with('mensaje', 'Cliente registrado exitósamente');
+            return view('administrador.clientes.index',compact('clientes'))->with('mensaje', 'Cliente registrado exitósamente');
         }
 
         if(Auth::user()->tipo_usuario =='empleado'){
@@ -83,7 +84,10 @@ class ClienteController extends Controller
             $cliente->estado = 'Activo';
             $cliente->save();
 
-            return view('empleado.clientes.create')->with('mensaje', 'Cliente registrado exitósamente');
+
+                $clientes = Cliente::orderBy('nombre', 'asc')->paginate(20);
+
+            return view('empleado.clientes.create',compact('clientes'))->with('mensaje', 'Cliente registrado exitósamente');
         }
     }
 

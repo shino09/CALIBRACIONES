@@ -1,4 +1,4 @@
-@extends('......empleado.home2')
+@extends('empleado.home2')
     @section('contenido')
         <div class="error-page">
             <h2 class="headline text-red">401</h2>
