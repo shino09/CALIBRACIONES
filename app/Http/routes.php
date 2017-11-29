@@ -39,7 +39,7 @@ Route::group(['middleware' => ['auth' , 'administrador']],function(){
 Route::group(['middleware' => ['auth' , 'empleado']],function(){
     Route::resource('empleado','EmpleadoController');
         Route::resource('/cliente', 'ClienteController');
-
+//el duran es gay y flojo
 
 });
 
