@@ -80,7 +80,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-right">
-                  <a href="logout" class="btn btn-primary btn-flat">Cerrar Sesión</a>
+                  <a href="{!!URL::to('/logout')!!}" class="btn btn-primary btn-flat">Cerrar Sesión</a>
                 </div>
               </li>
             </ul>
