@@ -30,7 +30,7 @@ class Administrador
             return $next($request);
         }
         else{
-            return view('errors.administrador.401');
+            return view('errors.empleado.402');
         }
     }
 }

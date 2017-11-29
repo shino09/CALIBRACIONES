@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Session;
+use App\Cliente;
 
 class Empleado
 {
@@ -29,8 +30,9 @@ class Empleado
         if($this->auth->user()->empleado()){
             return $next($request);
         }
-        else{
-            return view('errors.empleado.402');
+        else if(!($this->auth->user()->empleado())){
+               $clientes = Cliente::orderBy('nombre', 'asc')->paginate(20);
+                return view('administrador.clientes.index',compact('clientes'));
         }
     }
 }
