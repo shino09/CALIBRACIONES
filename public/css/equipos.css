@@ -1,0 +1,16 @@
+table{
+    table-layout: fixed;
+}
+
+#miTablaPersonalizada th{
+    text-align: center;
+    background-color: #F8DFF5;
+    height: 26px;
+    padding: 5px;
+    font-weight:normal ;
+}
+
+
+
+
+
